@@ -1,0 +1,50 @@
+
+
+.fancy-header{
+    color: black;
+    text-align: center;
+    }
+
+
+h1 {
+    text-align: center;
+}
+h1, h2, h3 {
+    text-decoration:underline;
+    color:lightgoldenrodyellow;
+}
+
+
+
+body {
+    background-image: url("../img/ice.png");
+}
+
+body {
+    font-family: 'Radley', serif;
+    text-align: center;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+
+ul {
+    list-style-type:circle;
+
+}
+
+.centered {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:active {
+    font-weight: bold;
+}
+
+
+
