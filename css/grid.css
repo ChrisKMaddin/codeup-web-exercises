@@ -32,9 +32,11 @@ h3 {
     .medium-column {
         width: 50%;
     }
+
     .small-column {
         width: 25%;
     }
+
     .small-offset {
         margin-left: 25%;
     }
