@@ -1,17 +1,10 @@
-
-
-.jumbotron {
-    background: rgba(169,169,169, 0.3);
-    text-align:center;
-}
-
 .jumbotron {
     background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
-    height: 100%;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
-.h1 {
-
+.jubotron > h1 {
+    background-color: rgba(169,169,169, 0.3);
+    text-align: center;
 }
-
