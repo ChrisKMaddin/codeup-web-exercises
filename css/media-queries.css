@@ -1,4 +1,5 @@
-html
+/* Reset styles */
+html,
 body {
     margin: 0;
     height: 100%;
@@ -15,6 +16,7 @@ h1 {
     text-align: center;
 }
 
+/* Blocks */
 .alert-info {
     background-color: #add8e6;
     border: 2px solid #d3d3d3;
@@ -47,34 +49,37 @@ h1 {
     font-style: italic;
 }
 
+/* Footer and Social Links area */
 footer > p {
     float: left;
 }
 
 #social-media-links {
-float: right;
+    float: right;
 }
 
-#social-media-links {
+#social-media-links li {
     list-style: none;
     float: left;
     letter-spacing: 1em;
 }
 
+/* Applies when the screen is wider than 768px */
+/* Put CSS that applies to non-mobile sized screen here */
 @media screen and (min-width: 768px) {
-
     .hidden-on-desktop {
         display: none;
     }
 
     h1 {
-        text-align: center;
+        text-align: left;
         padding: .2em;
         float: left;
         margin-bottom: 1em;
-
     }
 
+    /* pull navbar list items to right */
+    /* remove navbar list item background color */
     .nav-links {
         text-align: right;
         float: right;
@@ -83,15 +88,18 @@ float: right;
         background-color: transparent;
         display: inline-block;
         padding: .2em;
-        line-height: 3em;
+        line-height: 4em;
     }
-section {
-    float: left;
-}
-.main {
-    width: 66%;
-}
-.sub-section {
-    width: 33%;
-}
+
+    section {
+        float: left;
+    }
+    /* main section to take up 2/3rds of page*/
+    .main {
+        width: 66%;
+    }
+    /* subsection to take up 1/3rd of page */
+    .sub-section {
+        width: 33%;
+    }
 }
