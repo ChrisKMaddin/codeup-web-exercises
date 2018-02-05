@@ -28,13 +28,11 @@
 <button id="main-header-btn>">Change Header</button>
 <button id="sub-header-btn>">Change Sub-Header</button>
 <button id="li-btn>">Change Li's</button>
-<button id="sub-paragraph-btn>">Change Sub Para</button>
+<button id="sub-para-btn>">Change Sub Para</button>
 
 
 <script>
     (function () {
-
-
         "use strict";
 
         var headerBtn = document.getElementById('main-header-btn');
@@ -47,7 +45,6 @@
             var mainHeader = document.getElementById("main-header");
             // TODO: Set inner html of mainHeader to "JavaScript is Cool"
             mainHeader.innerHTML = "JavaScript is Cool!";
-            console.log(mainHeader.innerHTML);
         }
 
 
@@ -63,31 +60,33 @@
             // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
             // TODO: Set text color on every other list item to grey
-            for (var i = 0; i < listItems.length; i += 2) {
+            for (var i = 0; i < listItems.length; i += 1) {
+                if(i % 2 === 0) {
             listItems[i].style.color = "grey";
+                }
         }
             // TODO: Set text color of li with dbid = 1 to blue
             for (var i = 0; i < listItems.length; i += 1) {
             if (listItems[i].getAttribute('data-dbid') === '1') {
                 listItems[i].style.color = "blue";
             }
-        }
+            }
             //listItems[0].style.color = 'blue'; < easy way out
         }
 
 
-        function changeSubPara() {
+        function changeSubParagraph() {
             // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
             // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!";
+        subParagraphs[0].innerText = "Mission Accomplished!";
         }
 
 
-    headerBtn.addEventListener("click, changeHeader");
-    subHeaderBtn.addEventListener("click, changeSubHeader");
-    liBtn.addEventListener("click, change-lis");
-    subParaBtn.addEventListener("click, changeSubPara");
+    headerBtn.addEventListener("click", changeHeader);
+    subHeaderBtn.addEventListener("click", changeSubHeader);
+    liBtn.addEventListener("click", changeLis);
+    subParaBtn.addEventListener("click", changeSubParagraph);
 
 
     })();
