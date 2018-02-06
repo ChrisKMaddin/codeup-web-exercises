@@ -21,6 +21,7 @@
 
     var mapDisplay = document.getElementById("map-display");
 
+
     var options = {
         zoom: 14,
         center: {
@@ -28,12 +29,12 @@
             lng: 14.631045900000004
         },
         mapTypeId: google.maps.MapTypeId.SATELLITE
-
     };
+
 
     var map = new google.maps.Map(mapDisplay, options);
 
-    var address = "20 Lower Bridge St, Merchants Quay, Dublin 8, D08 WC64, Ireland";
+    var address = "Ul. 17. travnja 95, 51521, Punat, Croatia";
 
     function geocodeIt(someAddress) {
 
@@ -50,7 +51,6 @@
             if (status === "OK") {
                 map.setCenter(results[0].geometry.location);
             }
-
         });
     }
 
@@ -59,13 +59,15 @@
 
 
     var marker = new google.maps.Marker({
-        position: Punat,
-        map: map
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: Punat
     });
 
 
     var infowindow = new google.maps.InfoWindow({
-        content: "<h1>Konoba Ribice, Punat Croatia</h1>"
+        content: "<h1>Konoba Ribice, Punat Croatia</h1><br><p>At the church of St Rockos at the Great Square, in the courtyard of old coastal houses and taverns, there is a pleasant and romantic corner. With light conversation, a glass of wine, seafood specialties and candles, you'll spend the evening of pleasure in a genuine Punat environment, under the green of a 50-year old fig and vine trees, with the sound of a waterfall on a stone fountain.</p>"
     });
 
     marker.addListener("click", function () {
