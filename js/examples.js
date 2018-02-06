@@ -38,6 +38,7 @@
         //break
 //}
 
+/*
 
 
 var pizzaPreference = prompt("What kind of pizza do you like?");
@@ -48,4 +49,27 @@ if (pizzaPreference === "pineapple and hot sauce") {
     alert("Just plain cheese? Okay...");
 } else {
     alert(pizzaPreference + " isn't my favorite, but let's order some!");
+}*/
+
+
+/*
+function countTo(numberToCountTo) {
+    console.log('countTo was called!')
+    console.log('numberToCountTo: ' + numberToCountTo)
+    var currentNumber =1;
+    while(currentNumber <= numberToCountTo) {
+        console.log(currentNumber);
+        currentNumber +=1;
+
+    }
 }
+
+countTo(20);
+
+*/
+
+for (var currentNumber = 1; currentNumber <= numberToCounTo; currentNumber += 1) {
+    console.log(currentNubmer);
+}
+
+countTo(20)
