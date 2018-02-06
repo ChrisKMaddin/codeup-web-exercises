@@ -25,8 +25,8 @@
     var options = {
         zoom: 14,
         center: {
-            lat: 45.02250129999999,
-            lng: 14.631045900000004
+            lat: 45.0243373,
+            lng: 14.628769499999976
         },
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };
@@ -34,7 +34,7 @@
 
     var map = new google.maps.Map(mapDisplay, options);
 
-    var address = "Ul. 17. travnja 95, 51521, Punat, Croatia";
+    var address = "'Obala 18, 51521, Punat, Croatia'";
 
     function geocodeIt(someAddress) {
 
@@ -55,7 +55,7 @@
     }
 
 
-    var Punat = {lat: 45.02250129999999, lng: 14.631045900000004};
+   var Punat = {lat: 45.0243373, lng: 14.628769499999976};
 
 
     var marker = new google.maps.Marker({
@@ -66,14 +66,57 @@
     });
 
 
-    var infowindow = new google.maps.InfoWindow({
-        content: "<h1>Konoba Ribice, Punat Croatia</h1><br><p>At the church of St Rockos at the Great Square, in the courtyard of old coastal houses and taverns, there is a pleasant and romantic corner. With light conversation, a glass of wine, seafood specialties and candles, you'll spend the evening of pleasure in a genuine Punat environment, under the green of a 50-year old fig and vine trees, with the sound of a waterfall on a stone fountain.</p>"
-    });
+     var infowindow = new google.maps.InfoWindow({
+         content: "<h1>Konoba Sidro, Punat Croatia</h1><br><p>Welcome!\n" +
+         "We offer our guests excellent meals along the unique seaside promenade overlooking the marina. Our tavern and offer are the result of a family tradition of many years.\n" +
+         "\n" +
+         "We are looking forward to your arrival!</p>"
+     });
 
-    marker.addListener("click", function () {
-        infowindow.open(map, marker);
-    });
+     marker.addListener("click", function () {
+         infowindow.open(map, marker);
+     });
 
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var icons = {
+        info: {
+            icon: iconBase + 'dining_maps.png'
+        }
+    };
+
+    var features = [
+        {
+            //Konoba Sidro
+            position: new google.maps.LatLng(45.0243373, 14.628769499999976),
+            type: 'info',
+            title: 'Konoba Sidro'
+
+        }, {
+            //Konoba Ribice
+            position: new google.maps.LatLng(45.02250129999999, 14.631045900000004),
+            type: 'info',
+            title: 'Konoba Ribice'
+
+        },
+
+        {
+            //Restoran Val
+            position: new google.maps.LatLng(45.0099953, 14.622767899999985),
+            type: 'info',
+            title: 'Restoran Val'
+
+        }
+
+    ];
+
+    //create markers.
+    features.forEach(function (feature) {
+        var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+        });
+    });
 
 </script>
 </body>
