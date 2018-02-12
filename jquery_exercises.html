@@ -8,8 +8,72 @@
     <title>Document</title>
 </head>
 <body>
+<h1 id="hello" class="codeup">Hello World</h1>
+<div class="important">
+    <h3 class="important">Attention!</h3>
+    <p class="codeup">This is a jQuery example page!</p>
+</div>
+<div class="not-important">
+    <h2 class="codeup">Lorem Ipsum</h2>
+    <p id="information">Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
+</div>
+<p class="important">Please pay close attention!</p>
+<div id="myList">
+    <ul>
+        <li>Listen carefully.</li>
+        <li>Take good notes.</li>
+        <li>Ask for help.</li>
+        <li>Practice at home.</li>
+    </ul>
+</div>
 
 
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script>
+    $(myList).ready(function() {
+        "use strict";
+        alert( "DOM is finished loading!!" );
+    });
+
+
+</script>
+
+<!--//SELECTORS!-->
+
+<!--//id-->
+<!--//var someDiv = $('#someDiv');-->
+<!--//console.log(someDiv);-->
+
+<!--//class-->
+<!--var paragraphs = $('.paragraph');-->
+<!--//console.log($('.paragraph'));-->
+
+<!--//tag-->
+<!--var lis = $('li');-->
+<!--lis.html('Some Film');-->
+
+<!--//multiple-->
+<!--$('p, h1').html("Test");-->
+
+<!--//Getting a Value-->
+
+<!--//single CSS Property-->
+<!--$('p').css('background-color', 'blue');-->
+
+
+<!--$('p').css({-->
+<!--"background-color": "blue");-->
+<!--"color": "yellow"-->
+<!--});-->
+
+<!--//chaining css methods-->
+<!--$('p').css('background-color', 'blue');-->
+
+<!--$('p').css('background-color', 'blue').css-->
+<!--("color", "yellow").css("font-size", "4em");-->
 
 
 
