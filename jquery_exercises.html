@@ -6,38 +6,97 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        main {
+            margin: 1em;
+        }
+    </style>
 </head>
 <body>
-<h1 id="hello" class="codeup">Hello World</h1>
-<div class="important">
-    <h3 class="important">Attention!</h3>
-    <p class="codeup">This is a jQuery example page!</p>
-</div>
-<div class="not-important">
-    <h2 class="codeup">Lorem Ipsum</h2>
-    <p id="information">Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.</p>
-</div>
-<p class="important">Please pay close attention!</p>
-<div id="myList">
-    <ul>
-        <li>Listen carefully.</li>
-        <li>Take good notes.</li>
-        <li>Ask for help.</li>
-        <li>Practice at home.</li>
-    </ul>
-</div>
+    <main>
+        <div class="div">
+            <h1 class="codeup">Hello World</h1>
+            <p class="myClass">This is a jQuery example page!</p>
+            <ul>
+                <li>Listen carefully.</li>
+                <li>Take good notes.</li>
+                <li id="third item">Ask for help.</li>
+                <li>Practice at home.</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="div">
+            <h1 class="codeup">Languages</h1>
+            <p class="myClass">Here are some languages!</p>
+            <ul class="codeup">
+                <li>HTML5</li>
+                <li>JavaScript</li>
+                <li id="aathird item">CSS3.</li>
+                <li>Java</li>
+                <li>MySQl</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="div">
+            <h1 class="codeup">Hello World</h1>
+            <p class="myClass">This is a jQuery example page!</p>
+            <ul>
+                <li>Listen carefully.</li>
+                <li>Take good notes.</li>
+                <li id="athird item">Ask for help.</li>
+                <li>Practice at home.</li>
+                <li>Listen carefully.</li>
+                <li>Take good notes.</li>
+                <li>Ask for help.</li>
+                <li>Practice at home.</li>
+            </ul>
+        </div>
+
+
 
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
-<script>
-    $(myList).ready(function() {
-        "use strict";
-        alert( "DOM is finished loading!!" );
+
+
+
+
+    <script>
+    $( ".myList" ).css( "font-size", "20px" );
+    $( "div, span, p.myClass" )css( "background-color", "yellow" );
+    // id selectors
+    // use JQuery to select an element by the id.
+    // Alert the contents of the element.
+    var thirdItemText = $("#thirdItem");
+    alert(thirdItemText);
+
+    //update the jQuery code to select and alert a different id.
+    var idDiv = $("#idSelectorExercises");
+    alert(idDiv.tex());
+
+    //use the same id on 2 elements. How does this change the jQuery.
+    $(".codeup").css('border', '1px solid red');
+
+
+    //element selectors
+    $("li").css('font-size', "20px");
+    $("li").css({
+        'font-size': "20px",
+        'background-color': 'cyan'
     });
 
+    //craft selectors that highlight h1,p, and li tags
+    $("h1").css("background-color", "yellow");
+    $("p").css("background-color", "yellow");
+
+
+    //alert statement to alert the contents of your h1
+    alert($("h1").text());
+
+    //combine your selectors
+    $("h1, p, li").css('background-color', 'yellow');
 
 </script>
 
@@ -76,6 +135,6 @@
 <!--("color", "yellow").css("font-size", "4em");-->
 
 
-
+</main>
 </body>
 </html>
