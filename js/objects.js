@@ -226,4 +226,45 @@ console.log(anotherPerson.firstName + " " + anotherPerson.lastName);
      *   `showBookInfo` function.
      */
 
+     // Function to create a book object
+     function createBook(title, author) {
+         var nameArray = author.split(" ");
+         var firstName = nameArray[0];
+         var lastName = nameArray[1];
+         return {
+             title: title,
+             author: {
+                 firstName: firstName,
+                 lastName: lastName
+             }
+         }
+     }
+
+
+     // Create books array using calls to createBook() function
+     var books = [
+         createBook("1984", "George Orwell"),
+         createBook("The Lord of the Rings", "J.R.R. Tolkien"),
+         createBook("R is for Rocket", "Ray Bradbury"),
+         createBook("The Lost World", "Michael Crichton"),
+         createBook("The Shining", "Stephen King")
+     ];
+
+     console.log(books);
+
+
+     // Create function to showBookInfo()
+     function showBookInfo(book, index) {
+         var output = "Title: " + book.title + "\n";
+         output += "Author: " + book.author.firstName + " " + book.author.lastName  + "\n";
+         output += "---";
+         return output;
+     }
+
+     // Use showBookInfo() to log book objects using forEach loop
+     books.forEach(function(book, index) {
+         console.log("Book # " + (index + 1) + "\n");
+         console.log(showBookInfo(book));
+     });
+
 })();
