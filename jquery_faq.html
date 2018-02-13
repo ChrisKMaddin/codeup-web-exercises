@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+    <style>
+
+        .invisible {
+            display:none;
+        }
+
+        dt {
+            text-decoration: underline;
+            margin-top: 2em;
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>National Parks</h1>
+<div class="not-important">
+    <h2>10 Facts about National parks</h2>
+    <dl>
+        <dt>Yellowstone National Park</dt>
+        <dd class="invisible">Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
+        <dt>Yosemite National Park</dt>
+        <dd class="invisible">Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.</dd>
+        <dt>Death Valley National Park</dt>
+        <dd class="invisible">Death Valley National Park is the largest national park in the lower 48 U.S. states, stretching 5,300 square miles or 3.4 million acres.</dd>
+        <dt>Arches National Park</dt>
+        <dd class="invisible">Arches National Park is famous for having the largest concentration of stone arches in the world.</dd>
+        <dt>Rocky Mountain National Park</dt>
+        <dd class="invisible">Trail Ridge Road in Rocky Mountain National Park, which connects Grand Lake and Estes Park, is the highest continuously paved road in the U.S., and it includes breathtaking views and vistas along its entire 48 miles.</dd>
+        <dt>Crater Lake National Park</dt>
+        <dd class="invisible">At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.</dd>
+        <dt>Denali National Park</dt>
+        <dd class="invisible">The highest point in North America is Mount McKinley (aka Denali) standing at 20,320ft (6193.5m). It is in Denali National Park and Preserve, Alaska.</dd>
+        <dt>Mammoth Cave National Park</dt>
+        <dd class="invisible">The longest cave system in the world is at Mammoth Cave National Park, Kentucky. Currently, there is more than 3454 miles of cave mapped, with more to come. The largest “room” in the portion of the cave system that has been discovered is two acres in size.</dd>
+        <dt>Arctic National Park & Kobuk Valley National Park</dt>
+        <dd class="invisible">Two national parks are located north of the Arctic Circle: the Gates of the Arctic National Park and the Kobuk Valley National Park, both in Alaska.</dd>
+        <dt>Yellowstone National Park</dt>
+        <dd class="invisible">Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
+    </dl>
+</div>
+<button>Toggle Answers</button>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script>
+   $(document).ready(function() {
+       "use strict";
+       $('button').click(function () {
+           $('dd').toggleClass('invisible');
+       });
+
+
+    $('dt').click(function() {
+        $(this).css('background', 'yellow');
+    });
+    });
+
+</script>
+</body>
+</html>
