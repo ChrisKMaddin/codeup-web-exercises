@@ -20,10 +20,27 @@
             display: inline-block;
         }
 
+        h2 {
+            position:absolute;
+            display: none;
+        }
+
+        #badlands, #volcanoes, #hot-springs {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
+<div id="hide-header">
+    <h1>Would you like to join our news letter?</h1>
+    <span id="hide-header-toggle">X</span>
+</div>
+
+<br>
+<h2 id="h2">Would you like to register to our site?</h2>
+<br>
+<br>
 <h1>10 Facts about National Parks</h1>
 
     <dl>
@@ -52,26 +69,26 @@
 
 <button>Toggle Answers</button>
 
-<h3 id="hot-springs-heading">Hot Springs National Park</h3>
-<ul id="li1">
+<h3 id="hot-springs-toggle">Hot Springs National Park</h3>
+<ul id="hot-springs">
     <li>Native Americans referred to the hot springs at Hot Springs National Park as 'Valley of the Vapors'. They have been using the springs for at least 8000 years. The springs are included in many Native American legends.</li>
     <li>In the 1870s the waters of Hot Springs were being prescribed by doctors for various ailments. Patients were advised to spend a specific amount of time in the tub baths and steam baths depending on the illness.</li>
     <li>Hot Springs National Park is one of the few national parks that make up a part of a city rather than being located miles from developed infrastructure.</li>
     <li class="li">The thermal waters at Hot Springs National Park can be enjoyed by its visitors. The water in the thermal pools is 143 degrees Fahrenheit.</li>
 </ul>
-<h3 id="volcanoes-heading">Hawai'i Volcanoes National Park</h3>
-<ul id="li2">
+<h3 id="volcanoes-toggle">Hawai'i Volcanoes National Park</h3>
+<ul id="volcanoes">
     <li>Hawaii Volcanoes National Park has 7 ecological zones. These include alpine, subalpine, upland forest, rain forest, mid-elevation woodland, lowland, and seacoast.</li>
     <li>There are 59 endangered species living in Hawaii Volcanoes National Park. These include, among others, the Hawaiian hoary bat, Hawaiian goose, Hawaiian petrel, and hawksbill turtle.</li>
     <li>Plant diversity at the park is so diverse there are 1000 different species found in its borders. Of these 1000 plant species, 90% are found only in the park's region.</li>
-    <li class="li">The active volcanoes in Hawaii Volcanoes National Park continue to resurface the land because the lava continues to flow. This results in a constantly changing environment.</li>
+    <li>The active volcanoes in Hawaii Volcanoes National Park continue to resurface the land because the lava continues to flow. This results in a constantly changing environment.</li>
 </ul>
-<h3 id="badlands-heading">Badlands National Park</h3>
-<ul id="li3">
+<h3 id="badlands-toggle">Badlands National Park</h3>
+<ul id="badlands">
     <li>Fossils of prehistoric creatures dating back 30 million years have been found in the Badlands National Park region including rhinoceroses, and prehistoric camels.</li>
     <li>President Franklin D. Roosevelt created Badlands National Monument by signing a proclamation.</li>
     <li> French Canadians referred to the area as 'bad lands to travel through.'</li>
-    <li class="li">The name 'badlands' is believed to originate from the Lakota people. </li>
+    <li>The name 'badlands' is believed to originate from the Lakota people. </li>
 </ul>
 <button id="li1">Make the last li in each ul have a yellow background</button>
 <button id="li2">Another way to make the last li in each ul have a yellow background</button>
@@ -83,45 +100,64 @@
 <script>
    $(document).ready(function() {
        "use strict";
-   //     $('button').click(function () {
-   //         $('dd').toggleClass('invisible');
-   //     });
-   //
-   //     $('dt').click(function() {
-   //      $(this).css('background', 'yellow');
-   //  });
-   // });
-   //
-   // $('li').each(function(index) {
-   //     if (index % 0 !== 0) {
-   //         $(this).css('background-color', '#FF0');
-   //     }
-   // });
+
+
+       //     $('button').click(function () {
+       //         $('dd').toggleClass('invisible');
+       //     });
+       //
+       //     $('dt').click(function() {
+       //      $(this).css('background', 'yellow');
+       //  });
+       // });
+       //
+       // $('li').each(function(index) {
+       //     if (index % 0 !== 0) {
+       //         $(this).css('background-color', '#FF0');
+       //     }
+       // });
+
+
+    // $("#li1").click(function() {
+    //     $("ul").each(function(index, element) {
+    //         $(element).children().last().toggleClass('highlight');
+    //     });
+    // });
+    // $("#li2").click(function() {
+    //     $("ul").each(function(index, element) {
+    //         $(this).children().last().toggleClass('highlight');
+    //     });
+    // });
+    // //When any h3 is clicked,
+    // // the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+    // $("h3").click(function() {
+    //     $(this).next().children().css('font-weight', 'bold');
+    // });
+    // // When any list item is clicked, first li of the parent ul should have a font color of blue.
+    // $("li").click(function() {
+    //     $(this).parent().children().first().css('color', 'blue');
+    // });
+       $('#hide-header-toggle').click(function() {
+           $('#hide-header').hide();
+       });
 
 
 
+           $('#badlands-toggle').click(function() {
+               $('#badlands').slideToggle();
+           });
+       $('#hot-springs-toggle').click(function() {
+           $('#hot-springs').slideToggle();
+       });
+       $('#volcanoes-toggle').click(function() {
+           $('#volcanoes').slideToggle();
+       });
+
+       $('#h2').fadeIn(15000)("fast");
 
 
-    $("#li1").click(function() {
-        $("ul").each(function(index, element) {
-            $(element).children().last().toggleClass('highlight');
-        });
-    });
-    $("#li2").click(function() {
-        $("ul").each(function(index, element) {
-            $(this).children().last().toggleClass('highlight');
-        });
-    });
-    //When any h3 is clicked,
-    // the lis underneath it should be bolded. Use font-weight: bold to achieve this.
-    $("h3").click(function() {
-        $(this).next().children().css('font-weight', 'bold');
-    });
-    // When any list item is clicked, first li of the parent ul should have a font color of blue.
-    $("li").click(function() {
-        $(this).parent().children().first().css('color', 'blue');
-    });
 });
+
 </script>
 </body>
 </html>
