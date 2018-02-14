@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Example jQuery Page</title>
-    <style>
+    <title>jQuery Attributes and Css Exercise</title>
+    <style type="text/css">
 
         .invisible {
             display:none;
         }
 
+        .highlight {
+            background-color: yellow;
+        }
+
         dt {
             text-decoration: underline;
             margin-top: 2em;
+            margin-bottom: 10px;
+            font-weight: 900;
             display: inline-block;
         }
-
 
     </style>
 </head>
 <body>
-<h1>National Parks</h1>
-<div class="not-important">
-    <h2>10 Facts about National parks</h2>
+
+<h1>10 Facts about National Parks</h1>
+
     <dl>
         <dt>Yellowstone National Park</dt>
         <dd class="invisible">Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
@@ -43,8 +48,33 @@
         <dt>Yellowstone National Park</dt>
         <dd class="invisible">Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
     </dl>
-</div>
+
+
 <button>Toggle Answers</button>
+
+<h3 id="hot-springs-heading">Hot Springs National Park</h3>
+<ul id="li1">
+    <li>Native Americans referred to the hot springs at Hot Springs National Park as 'Valley of the Vapors'. They have been using the springs for at least 8000 years. The springs are included in many Native American legends.</li>
+    <li>In the 1870s the waters of Hot Springs were being prescribed by doctors for various ailments. Patients were advised to spend a specific amount of time in the tub baths and steam baths depending on the illness.</li>
+    <li>Hot Springs National Park is one of the few national parks that make up a part of a city rather than being located miles from developed infrastructure.</li>
+    <li class="li">The thermal waters at Hot Springs National Park can be enjoyed by its visitors. The water in the thermal pools is 143 degrees Fahrenheit.</li>
+</ul>
+<h3 id="volcanoes-heading">Hawai'i Volcanoes National Park</h3>
+<ul id="li2">
+    <li>Hawaii Volcanoes National Park has 7 ecological zones. These include alpine, subalpine, upland forest, rain forest, mid-elevation woodland, lowland, and seacoast.</li>
+    <li>There are 59 endangered species living in Hawaii Volcanoes National Park. These include, among others, the Hawaiian hoary bat, Hawaiian goose, Hawaiian petrel, and hawksbill turtle.</li>
+    <li>Plant diversity at the park is so diverse there are 1000 different species found in its borders. Of these 1000 plant species, 90% are found only in the park's region.</li>
+    <li class="li">The active volcanoes in Hawaii Volcanoes National Park continue to resurface the land because the lava continues to flow. This results in a constantly changing environment.</li>
+</ul>
+<h3 id="badlands-heading">Badlands National Park</h3>
+<ul id="li3">
+    <li>Fossils of prehistoric creatures dating back 30 million years have been found in the Badlands National Park region including rhinoceroses, and prehistoric camels.</li>
+    <li>President Franklin D. Roosevelt created Badlands National Monument by signing a proclamation.</li>
+    <li> French Canadians referred to the area as 'bad lands to travel through.'</li>
+    <li class="li">The name 'badlands' is believed to originate from the Lakota people. </li>
+</ul>
+<button id="li1">Make the last li in each ul have a yellow background</button>
+<button id="li2">Another way to make the last li in each ul have a yellow background</button>
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
@@ -53,16 +83,44 @@
 <script>
    $(document).ready(function() {
        "use strict";
-       $('button').click(function () {
-           $('dd').toggleClass('invisible');
-       });
+   //     $('button').click(function () {
+   //         $('dd').toggleClass('invisible');
+   //     });
+   //
+   //     $('dt').click(function() {
+   //      $(this).css('background', 'yellow');
+   //  });
+   // });
+   //
+   // $('li').each(function(index) {
+   //     if (index % 0 !== 0) {
+   //         $(this).css('background-color', '#FF0');
+   //     }
+   // });
 
 
-    $('dt').click(function() {
-        $(this).css('background', 'yellow');
+
+
+    $("#li1").click(function() {
+        $("ul").each(function(index, element) {
+            $(element).children().last().toggleClass('highlight');
+        });
     });
+    $("#li2").click(function() {
+        $("ul").each(function(index, element) {
+            $(this).children().last().toggleClass('highlight');
+        });
     });
-
+    //When any h3 is clicked,
+    // the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+    $("h3").click(function() {
+        $(this).next().children().css('font-weight', 'bold');
+    });
+    // When any list item is clicked, first li of the parent ul should have a font color of blue.
+    $("li").click(function() {
+        $(this).parent().children().first().css('color', 'blue');
+    });
+});
 </script>
 </body>
 </html>
