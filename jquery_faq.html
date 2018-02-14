@@ -4,6 +4,7 @@
     <title>jQuery Attributes and Css Exercise</title>
     <style type="text/css">
 
+
         .invisible {
             display:none;
         }
@@ -18,10 +19,10 @@
             margin-bottom: 10px;
             font-weight: 900;
             display: inline-block;
+
         }
 
         h2 {
-            position:absolute;
             display: none;
         }
 
@@ -32,13 +33,12 @@
 </head>
 <body>
 
-<div id="hide-header">
-    <h1>Would you like to join our news letter?</h1>
-    <span id="hide-header-toggle">X</span>
+<div id="newsletter">
+    <h1>Would you like to join our news letter?<span id="x-click"> X </span></h1>
 </div>
 
 <br>
-<h2 id="h2">Would you like to register to our site?</h2>
+<h2 id="register">Would you like to register to our site?</h2>
 <br>
 <br>
 <h1>10 Facts about National Parks</h1>
@@ -137,23 +137,31 @@
     // $("li").click(function() {
     //     $(this).parent().children().first().css('color', 'blue');
     // });
-       $('#hide-header-toggle').click(function() {
-           $('#hide-header').hide();
+       $('#x-click').click(function() {
+           $(this).parent().parent().hide();
        });
 
+       // $('#badlands-toggle').click(function() {
+       //         $('#badlands').slideToggle();
+       //     });
+       // $('#hot-springs-toggle').click(function() {
+       //     $('#hot-springs').slideToggle();
+       // });
+       // $('#volcanoes-toggle').click(function() {
+       //     $('#volcanoes').slideToggle();
+       // });
 
+       $('h3').next().hide();
 
-           $('#badlands-toggle').click(function() {
-               $('#badlands').slideToggle();
-           });
-       $('#hot-springs-toggle').click(function() {
-           $('#hot-springs').slideToggle();
+       $('h3').click(function() {
+           $(this).next().slideToggle();
        });
-       $('#volcanoes-toggle').click(function() {
-           $('#volcanoes').slideToggle();
-       });
 
-       $('#h2').fadeIn(15000)("fast");
+       $('#register').hide().delay(4000).fadeIn();
+
+       //Bonuses
+
+       $()
 
 
 });
