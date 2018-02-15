@@ -1,0 +1,32 @@
+[
+  {
+    "title": "My First Blog Post",
+    "content": "Lorem ispum dolor...",
+    "categories": [
+      "greek"
+    ],
+    "date": "January 25, 2018"
+  },
+  {
+    "title": "My Second Post",
+    "content": "Valentines...",
+    "categories": [
+      "Cake",
+      "Dinner",
+      "Date",
+      "Love"
+    ],
+    "date": "February 14, 2018"
+  }, {
+    "title": "The Third Post",
+    "content": "This is a test blog post...",
+    "categories": [
+            "test",
+            "hello",
+            "world",
+            "plans"
+    ],
+    "date": "March 17th"
+
+  }
+]
