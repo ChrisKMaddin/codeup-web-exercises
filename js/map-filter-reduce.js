@@ -42,14 +42,13 @@ const moreLanguageUsers = users.filter((user) => {
 
 console.log(moreLanguageUsers);
 
+
+
 //(({ languages })) < where users is
 
 
 //.map
 //Use .map to create an array of strings where each element is a user's email address
-// const results = languages.filter(n => n % 3 === 0);
-// console.log(results);
-
 
 // const emails = users.map((user) => {
 //     return user.email;
