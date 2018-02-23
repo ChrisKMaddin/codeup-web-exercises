@@ -47,6 +47,7 @@ const civilServants = customers.filter(({occupation}) => {
 });
 console.log(civilServants);
 
+
 // PROBLEM 4 - determine the average age of customers
 
 const averageAge = family.reduce((accumulator, person) => {

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    /* Style the video: 100% width and height to cover the entire window */
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    /* Add some content at the bottom of the video/page */
+    .content {
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        font-family: 'Berkshire Swash', cursive;
+    }
+
+    /* Style the button used to pause/play the video */
+    #myBtn {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    #myBtn:hover {
+        background: #ddd;
+        color: black;
+    }
+
+
+
+</style>
+<body id="body">
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+    <source src="img/bluePlanet.mp4" type="video/mp4">
+</video>
+
+<!-- Optional: some overlay text to describe the video -->
+<div class="content">
+    <h1>In the depths of the green nebulae</h1>
+    <p>During the last moments of Nagata's final descent, there was the silver pelican's cry,<br>
+        that set off a chain reaction of the formation of the Seven Stars of Pattern 6. <br>
+        The noise that spewed forth from it's clouds were caught in the tangles of shrieking metal and tearing glass.<br>
+        Brasiall the kill strong, known also as Tazur, was in pursuit to collect the beginnings.<br>
+        As was Ximitrous the exultant wind catcher, holder of the last Amethyst receiver and heir to his fair Mother's Crown.
+        Thus starting the race that would define the second future...</p>
+    <!-- Use a button to pause/play the video with JavaScript -->
+<div>
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+    <br>
+   <div>
+    <audio controls autoplay >
+        <source src="audio/neb.wav">
+    </audio>
+   </div>
+</div>
+
+
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    // Get the video
+    const video = document.getElementById("myVideo");
+
+    // Get the button
+    const btn = document.getElementById("myBtn");
+
+    // Pause and play the video, and change the button text
+    function myFunction() {
+        if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+        } else {
+            video.pause();
+            btn.innerHTML = "Play";
+        }
+    }
+</script>
+</body>
+</html>
